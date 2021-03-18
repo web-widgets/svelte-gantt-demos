@@ -1,11 +1,16 @@
 <script>
 	import Gantt from "@dhtmlx/trial-svelte-gantt";
-	import { RestBackend } from "@dhtmlx/trial-lib-gantt";
+	import { RestDataProvider } from "@dhtmlx/gantt-data-provider";
 
 	export let skinSettings;
 
 	const url = "https://master--gantt-node--dev.webix.io";
-	const server = new RestBackend(url);
+	let store = null;
+
+	const server = new RestDataProvider(url, {
+		task: (id, obj) => store.updateTask(id, obj, true),
+		link: (id, obj) => store.updateLink(id, obj, true),
+	});
 
 	let tasks = [];
 	let links = [];
@@ -19,4 +24,5 @@
 	{...$skinSettings}
 	{tasks}
 	{links}
-	on:save={ev => server.saveData(ev.detail, server)} />
+	bind:store
+	on:save={ev => server.saveData(ev.detail)} />

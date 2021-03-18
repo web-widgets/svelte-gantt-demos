@@ -2,7 +2,7 @@
 	import DefaultTheme from "@dhtmlx/trial-svelte-gantt/src/wx/DefaultTheme.svelte";
 	import MaterialTheme from "@dhtmlx/trial-svelte-gantt/src/wx/MaterialTheme.svelte";
 
-	import Router, { link, push, location } from "svelte-spa-router";
+	import Router, { link, push } from "svelte-spa-router";
 	import active from "svelte-spa-router/active";
 	import { wrap } from "svelte-spa-router/wrap";
 	import { writable } from "svelte/store";

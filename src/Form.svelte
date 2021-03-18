@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher, onMount } from "svelte";
-	import { getDiffer, getAdder } from "@dhtmlx/trial-lib-gantt";
+	import { differenceInCalendarDays, addDays } from "date-fns";
 	import Text from "@dhtmlx/trial-svelte-gantt/src/wx/Text.svelte";
 	import Textarea from "@dhtmlx/trial-svelte-gantt/src/wx/Textarea.svelte";
 	import Select from "@dhtmlx/trial-svelte-gantt/src/wx/Select.svelte";
@@ -13,7 +13,7 @@
 
 	const dispatch = createEventDispatcher();
 
-	let node, l, t, dx, dy, moving;
+	let node, l, t;
 
 	let milestone = false;
 
@@ -23,26 +23,6 @@
 		l = (window.innerWidth - node.offsetWidth) / 2;
 		t = (window.innerHeight - node.offsetHeight) / 2;
 	});
-
-	function down(e) {
-		const css = e.target.classList;
-		if (css.contains("title")) {
-			dx = e.pageX - node.offsetLeft;
-			dy = e.pageY - node.offsetTop;
-			moving = true;
-		}
-	}
-
-	function move(e) {
-		if (moving) {
-			node.style.top = `${e.pageY - dy}px`;
-			node.style.left = `${e.pageX - dx}px`;
-		}
-	}
-
-	function up() {
-		moving = false;
-	}
 
 	function deleteTask() {
 		dispatch("action", { action: "delete-task", id: task.id });
@@ -60,11 +40,11 @@
 
 	$: {
 		if (!task.end_date) {
-			task.end_date = getAdder("day")(task.start_date, task.duration);
+			task.end_date = addDays(task.start_date, task.duration);
 		} else {
-			let duration = getDiffer("day")(task.end_date, task.start_date);
+			let duration = differenceInCalendarDays(task.end_date, task.start_date);
 			if (duration > 0) task.duration = duration;
-			else task.end_date = getAdder("day")(task.start_date, task.duration);
+			else task.end_date = addDays(task.start_date, task.duration);
 		}
 
 		dispatch("action", { action: "update-task", id: task.id, obj: task });
@@ -75,13 +55,10 @@
 	<div
 		class="modal"
 		style="left:{l}px;top:{t}px"
-		bind:this={node}
-		on:mousedown={down}
-		on:mousemove={move}
-		on:mouseup={up}>
+		bind:this={node} >
 		<div class="header">
 			<h3 class="title">Edit task</h3>
-			<div class="icon-close" on:click={onClose}>&#9587;</div>
+			<div class="close" on:click={onClose}>&#9587;</div>
 		</div>
 		<div class="body">
 			<Text autofocus={true} label="Name" bind:value={task.text} />
@@ -106,22 +83,24 @@
 				<Slider label="Progress: {task.progress}%" bind:value={task.progress} />
 			{/if}
 
-			<button class="btn btn-danger" on:click={deleteTask}>Delete</button>
+			<button class="button danger" on:click={deleteTask}>Delete</button>
 		</div>
 	</div>
 </div>
 
 <style>
 	.backdrop {
-		position: absolute;
-		width: 100%;
-		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
 		z-index: 5;
 		background: rgba(0, 0, 0, 0.15);
 	}
 
 	.modal {
-		position: absolute;
+		position: relative;
 		width: 340px;
 		padding: 20px;
 		border-radius: 6px;
@@ -139,7 +118,7 @@
 		margin: 0;
 	}
 
-	.icon-close {
+	.close {
 		position: absolute;
 		top: 20px;
 		right: 20px;
@@ -150,7 +129,7 @@
 		transition: color 0.15s ease-in;
 	}
 
-	.icon-close:hover {
+	.close:hover {
 		color: rgb(255, 122, 122);
 	}
 
@@ -158,32 +137,25 @@
 		margin: 20px 0;
 	}
 
-	.btn {
-		padding: 8px 16px;
-		border: none;
-		border-radius: var(--wx-button-radius);
+	.button {
+		padding: 10px;
+		margin: 0 0 0.5em 0;
+		box-sizing: border-box;
+		border: 1px solid #ccc;
+		border-radius: 2px;
 		font: var(--wx-font);
-		font-weight: 500;
-		text-transform: uppercase;
-		color: #fff;
+		border-radius: 3px;
 		cursor: pointer;
 	}
 
-	.btn:active {
+	.button:focus {
 		outline: none;
 		opacity: 0.7;
 	}
 
-	.btn:focus {
-		outline: none;
+	.danger {
+		background-color: var(--wx-danger-color);
+		color: var(--wx-inverted-color);
 	}
 
-	.btn-danger {
-		color: var(--wx-danger-color);
-		background-color: transparent;
-	}
-
-	.btn-danger:hover {
-		background-color: var(--wx-danger-color-hover);
-	}
 </style>

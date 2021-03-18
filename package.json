@@ -1,6 +1,6 @@
 {
   "name": "svelte-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -18,8 +18,9 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "@dhtmlx/trial-lib-gantt": "^0.3.2",
-    "@dhtmlx/trial-svelte-gantt": "^0.2.0",
+    "@dhtmlx/gantt-data-provider": "^0.1.0",
+    "@dhtmlx/trial-svelte-gantt": "^1.0.1",
+    "date-fns": "^2.19.0",
     "svelte-spa-router": "^3.1.0"
   }
 }

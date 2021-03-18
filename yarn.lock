@@ -23,17 +23,26 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@dhtmlx/trial-lib-gantt@^0.3.2":
-  version "0.3.2"
-  resolved "https://nodeproxy.webix.io/@dhtmlx%2ftrial-lib-gantt/-/trial-lib-gantt-0.3.2.tgz#549a9cf61a9fabe4cdd0ce9ab1345b3a4c876b60"
-  integrity sha512-gVcHMOmed6u39Mcw59fh9l08X7QVEC/RwybZO3usjezPcoS/8odhdpRlc1x43g1WNsGA+IT7OP5IeHfiUSU06g==
+"@dhtmlx/gantt-data-provider@^0.1.0":
+  version "0.1.0"
+  resolved "https://nodeproxy.webix.io/@dhtmlx%2fgantt-data-provider/-/gantt-data-provider-0.1.0.tgz#267d4eca9a8b79056994c2db5bb47c9b59cdfbdd"
+  integrity sha512-bEQp9Hsu9Pii6eQ/m6l0QYQFNZvNrW7xbVclbmkymUkILYotceIBLUZSEQ9QypmIjyqx5yyrT3JTh30v2b1dPQ==
+
+"@dhtmlx/trial-lib-gantt@^1.0.1":
+  version "1.0.1"
+  resolved "https://nodeproxy.webix.io/@dhtmlx%2ftrial-lib-gantt/-/trial-lib-gantt-1.0.1.tgz#9086a18220379b1d4dc22eb913026fe4a6395b32"
+  integrity sha512-xd7iwUlHuyxtdvM73RSzIhJqVP7c1HwwW/S8PB8BjxBLU0nwU9E+I5t4FGUbCFFFXKKsmCU0294Mx53RK23teA==
   dependencies:
     date-fns "^2.17.0"
 
-"@dhtmlx/trial-svelte-gantt@^0.2.0":
-  version "0.2.0"
-  resolved "https://nodeproxy.webix.io/@dhtmlx%2ftrial-svelte-gantt/-/trial-svelte-gantt-0.2.0.tgz#1caf5a5bea0a2d3df5c5c56479eb7788b168a10c"
-  integrity sha512-iniA3cN+wWQ4qbllELeaAUn/ubgdT0pLsb6+23xC11YrywNKLKh4bpwa7wtatsg1ha0FTxrIlPlHXLl8zxmbiQ==
+"@dhtmlx/trial-svelte-gantt@^1.0.1":
+  version "1.0.1"
+  resolved "https://nodeproxy.webix.io/@dhtmlx%2ftrial-svelte-gantt/-/trial-svelte-gantt-1.0.1.tgz#fa8b43403aeff2fb5f40ddce3c865a01fdc71e8a"
+  integrity sha512-SS7TChzamEti2FKgPKVCbw1RLfMfIvPUFWRM6HFrQDRcvJ2+PW5MlkNiGHaJEyShMiMetHPOe0DZA1ZWN35tBA==
+  dependencies:
+    "@dhtmlx/gantt-data-provider" "^0.1.0"
+    "@dhtmlx/trial-lib-gantt" "^1.0.1"
+    date-fns "^2.17.0"
 
 "@polka/url@^1.0.0-next.9":
   version "1.0.0-next.11"
@@ -215,10 +224,10 @@ console-clear@^1.1.0:
   resolved "https://registry.yarnpkg.com/console-clear/-/console-clear-1.1.1.tgz#995e20cbfbf14dd792b672cde387bd128d674bf7"
   integrity sha512-pMD+MVR538ipqkG5JXeOEbKWS5um1H4LUUccUQG68qpeqBYbzYy79Gh55jkd2TtPdRfUaLWdv6LPP//5Zt0aPQ==
 
-date-fns@^2.17.0:
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.17.0.tgz#afa55daea539239db0a64e236ce716ef3d681ba1"
-  integrity sha512-ZEhqxUtEZeGgg9eHNSOAJ8O9xqSgiJdrL0lzSSfMF54x6KXWJiOH/xntSJ9YomJPrYH/p08t6gWjGWq1SDJlSA==
+date-fns@^2.17.0, date-fns@^2.19.0:
+  version "2.19.0"
+  resolved "https://nodeproxy.webix.io/date-fns/-/date-fns-2.19.0.tgz#65193348635a28d5d916c43ec7ce6fbd145059e1"
+  integrity sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==
 
 deepmerge@^4.2.2:
   version "4.2.2"
