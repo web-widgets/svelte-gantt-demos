@@ -52,10 +52,7 @@
 </script>
 
 <div class="backdrop">
-	<div
-		class="modal"
-		style="left:{l}px;top:{t}px"
-		bind:this={node} >
+	<div class="modal" style="left:{l}px;top:{t}px" bind:this={node}>
 		<div class="header">
 			<h3 class="title">Edit task</h3>
 			<div class="close" on:click={onClose}>&#9587;</div>
@@ -157,5 +154,4 @@
 		background-color: var(--wx-danger-color);
 		color: var(--wx-inverted-color);
 	}
-
 </style>
