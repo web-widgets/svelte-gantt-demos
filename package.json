@@ -18,7 +18,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "@dhtmlx/gantt-data-provider": "^0.1.0",
+    "@dhtmlx/gantt-data-provider": "^0.2.0",
     "@dhtmlx/trial-svelte-gantt": "1.1.0",
     "date-fns": "^2.19.0",
     "svelte-spa-router": "^3.1.0"

@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@dhtmlx/gantt-data-provider@^0.1.0":
-  version "0.1.0"
-  resolved "https://nodeproxy.webix.io/@dhtmlx%2fgantt-data-provider/-/gantt-data-provider-0.1.0.tgz#267d4eca9a8b79056994c2db5bb47c9b59cdfbdd"
-  integrity sha512-bEQp9Hsu9Pii6eQ/m6l0QYQFNZvNrW7xbVclbmkymUkILYotceIBLUZSEQ9QypmIjyqx5yyrT3JTh30v2b1dPQ==
+"@dhtmlx/gantt-data-provider@^0.2.0":
+  version "0.2.0"
+  resolved "https://nodeproxy.webix.io/@dhtmlx%2fgantt-data-provider/-/gantt-data-provider-0.2.0.tgz#10c89c1b09387282fded78e79aa4972560d62ce0"
+  integrity sha512-/KQXzx+oSVxb97ymQ7T+P5Yznr8EOUXrFZfenOrQdskZLhmDcR28NuDPv1qnULpepN5ifbyUFb2Roh2Ah6B0sA==
 
 "@dhtmlx/gantt-data-provider@^0.2.0-b1":
   version "0.2.0-b1"
