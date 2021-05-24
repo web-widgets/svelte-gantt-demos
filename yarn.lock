@@ -28,20 +28,25 @@
   resolved "https://nodeproxy.webix.io/@dhtmlx%2fgantt-data-provider/-/gantt-data-provider-0.1.0.tgz#267d4eca9a8b79056994c2db5bb47c9b59cdfbdd"
   integrity sha512-bEQp9Hsu9Pii6eQ/m6l0QYQFNZvNrW7xbVclbmkymUkILYotceIBLUZSEQ9QypmIjyqx5yyrT3JTh30v2b1dPQ==
 
-"@dhtmlx/trial-lib-gantt@^1.0.1":
-  version "1.0.1"
-  resolved "https://nodeproxy.webix.io/@dhtmlx%2ftrial-lib-gantt/-/trial-lib-gantt-1.0.1.tgz#9086a18220379b1d4dc22eb913026fe4a6395b32"
-  integrity sha512-xd7iwUlHuyxtdvM73RSzIhJqVP7c1HwwW/S8PB8BjxBLU0nwU9E+I5t4FGUbCFFFXKKsmCU0294Mx53RK23teA==
+"@dhtmlx/gantt-data-provider@^0.2.0-b1":
+  version "0.2.0-b1"
+  resolved "https://nodeproxy.webix.io/@dhtmlx%2fgantt-data-provider/-/gantt-data-provider-0.2.0-b1.tgz#0b354312c9fd5ef3578cfdb48cb89ae3b79bdf47"
+  integrity sha512-1lcKuII59EJ6xE7gXsO1d+TunVUU5JkegeAdIc8xzxO8XdeErp8CiKWDMZHzb0BDKXZyju30RTCPgozQvT4SYQ==
+
+"@dhtmlx/trial-lib-gantt@^1.1.0":
+  version "1.1.0"
+  resolved "https://nodeproxy.webix.io/@dhtmlx%2ftrial-lib-gantt/-/trial-lib-gantt-1.1.0.tgz#861d3116b326c52a5002d3977f7aba62392cf129"
+  integrity sha512-xFfYywU9zzT3MZQImKpVjenzqQ9GpHdWgzSFZcMCnc9XE0VnCdb8Oi7foZ0oT0lDFZC0zEzjRAIYKcUqOm7czA==
   dependencies:
     date-fns "^2.17.0"
 
-"@dhtmlx/trial-svelte-gantt@^1.0.1":
-  version "1.0.1"
-  resolved "https://nodeproxy.webix.io/@dhtmlx%2ftrial-svelte-gantt/-/trial-svelte-gantt-1.0.1.tgz#fa8b43403aeff2fb5f40ddce3c865a01fdc71e8a"
-  integrity sha512-SS7TChzamEti2FKgPKVCbw1RLfMfIvPUFWRM6HFrQDRcvJ2+PW5MlkNiGHaJEyShMiMetHPOe0DZA1ZWN35tBA==
+"@dhtmlx/trial-svelte-gantt@1.1.0":
+  version "1.1.0"
+  resolved "https://nodeproxy.webix.io/@dhtmlx%2ftrial-svelte-gantt/-/trial-svelte-gantt-1.1.0.tgz#9d9fb81374c9a9f436f00b60dfd642989065ad9c"
+  integrity sha512-B3ROMDp0YytDP71+XuP9w3xAmsgB81XJ1Ju/g3UFt5cSgxgoZhOEWp302xqfS8UTs8oc7OUdLlwRM1t80DaAhw==
   dependencies:
-    "@dhtmlx/gantt-data-provider" "^0.1.0"
-    "@dhtmlx/trial-lib-gantt" "^1.0.1"
+    "@dhtmlx/gantt-data-provider" "^0.2.0-b1"
+    "@dhtmlx/trial-lib-gantt" "^1.1.0"
     date-fns "^2.17.0"
 
 "@polka/url@^1.0.0-next.9":

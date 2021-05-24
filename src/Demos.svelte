@@ -20,6 +20,7 @@
 	import GanttMarkers from "./GanttMarkers.svelte";
 	import GanttTooltips from "./GanttTooltips.svelte";
 	import GanttText from "./GanttText.svelte";
+	import GanttLocale from "./GanttLocale.svelte";
 
 	const skins = [
 		{
@@ -60,6 +61,7 @@
 		["/markers/:skin", "Markers", GanttMarkers],
 		["/tooltips/:skin", "Tooltips", GanttTooltips],
 		["/templates/:skin", "Custom text", GanttText],
+		["/locale/:skin", "Locales", GanttLocale],
 	];
 
 	let title = "";
@@ -91,6 +93,7 @@
 	);
 
 	let show = false;
+	let noSidebar = document.location.search.indexOf("no-sidebar") !== -1;
 
 	function onClick() {
 		show = true;
@@ -100,7 +103,7 @@
 <DefaultTheme />
 <MaterialTheme />
 
-<div class="layout">
+<div class="layout" class:no-sidebar={noSidebar}>
 	<div class="sidebar" class:move={show} on:click={onClick}>
 		{#if show}
 			<div class="title">Gantt Demos</div>
@@ -261,5 +264,13 @@
 		background-color: #ebebeb9c;
 		font-weight: 500;
 		cursor: pointer;
+	}
+
+	.no-sidebar .sidebar {
+		display: none;
+	}
+	.no-sidebar .content {
+		width: 100%;
+		transform: none;
 	}
 </style>
